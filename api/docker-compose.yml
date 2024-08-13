@@ -1,8 +1,43 @@
 version: "3"
 
-networks:
-
 services:
   db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: NIco__123
+      MYSQL_DATABASE: db_celsia
+      MYSQL_USER: root
+      MYSQL_PASSWORD: NIco__123
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - backend
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/db_celsia
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: NIco__123
+    depends_on:
+      - db
+    networks:
+      - backend
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  backend:
+
+volumes:
+  db_data:
