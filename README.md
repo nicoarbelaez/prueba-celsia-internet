@@ -104,7 +104,7 @@ Para el desarrollo de la prueba teórica, tendrás que escribir tus respuestas e
 
 2.1. Elabore un diagrama de componentes de la aplicación. Debe cargar el archivo en la siguiente ruta del repositorio: `./assets/diagrama.png`
 
-<img src="https://github.com/celsia-internet/pruebas/blob/main/assets/diagrama.png" alt="Diagrama" width="400">
+<img src="assets/celsia_app.svg" alt="Diagrama" width="400">
 
 2.2. ¿Qué mecanismos de seguridad incluirías en la aplicación para garantizar la protección del acceso a los datos?
 
